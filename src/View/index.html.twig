@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mine Sweeper</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>Dojo PHP</h1>
+        <h2>Mine Sweeper</h2>
+        <div class="container">
+            <a class="new-game-button" href="?reset=1">New Game</a>
+            <div class="tiles">
+                {% for y in 0 .. mineSweeper.tiles|length - 1 %}
+                    <div class="column">
+                        {% for x in 0 .. mineSweeper.tiles.0|length - 2 %}
+                            <a class="line" href="?x={{x}}&y={{y}}">
+                                {% if mineSweeper.tiles[y][x] != 0 and mineSweeper.tiles[y][x] != constant('App\\MineSweeper::BOMB') %}
+                                    {{ mineSweeper.tiles[y][x] }}
+                                {% endif %}
+                            </a>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="error">{{ error }}</div>
+        </div>
+    </body>
+</html>

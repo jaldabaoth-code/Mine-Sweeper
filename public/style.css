@@ -1,0 +1,59 @@
+:root {
+    --unchecked : grey;
+    --checked : rgb(94, 94, 94);
+    --border: rgb(187, 187, 187);
+}
+
+h1, h2 {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.new-game-button {
+    background-color: var(--checked);
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+.tiles {
+    display: flex;
+    justify-content: center;
+    width: 15%;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.line {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    background-color: var(--unchecked);
+    border: 2px outset var(--border);
+    font-size: 50px;
+    height: 10vh;
+    width: 5vw;
+    color: #ffffff;
+}
+
+.error {
+    font-size: 40px;
+    font-weight: bold;
+    color: #ff0000;
+}
